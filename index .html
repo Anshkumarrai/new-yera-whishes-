@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy New Year 2026 | CodeVerse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    header {
+      animation: fadeDown 1.5s ease;
+    }
+
+    header h1 {
+      font-size: 4.8rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    header h1 span {
+      color: #ffd369;
+    }
+
+    header p {
+      font-size: 1.6rem;
+      opacity: 0.95;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(18px);
+      border-radius: 28px;
+      padding: 70px;
+      margin-top: 100px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+      animation: fadeUp 1.8s ease;
+    }
+
+    .card h2 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .card p {
+      font-size: 1.35rem;
+      line-height: 2;
+      opacity: 0.97;
+    }
+
+    .team {
+      margin-top: 40px;
+      font-weight: 600;
+      color: #ffd369;
+    }
+
+    footer {
+      margin-top: 80px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Floating lights */
+    .light {
+      position: fixed;
+      width: 14px;
+      height: 14px;
+      background: rgba(255, 211, 105, 0.95);
+      border-radius: 50%;
+      animation: float 14s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      to { transform: translateY(-10vh) scale(1); opacity: 1; }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 3rem; }
+      header p { font-size: 1.2rem; }
+      .card { padding: 35px; }
+    }
+      .card { padding: 25px; }
+    
+    /* Cursor interaction */
+    .cursor-glow {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255,211,105,0.6), transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s ease;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor-glow"></div>
+
+  <!-- floating lights -->
+  <script>
+    for (let i = 0; i < 45; i++) {
+      const light = document.createElement('div');
+      light.className = 'light';
+      light.style.left = Math.random() * 100 + 'vw';
+      light.style.animationDelay = Math.random() * 10 + 's';
+      light.style.animationDuration = 8 + Math.random() * 10 + 's';
+      document.body.appendChild(light);
+    }
+  </script>
+
+  <div class="container">
+    <header>
+      <h1>Happy New Year <span>2026</span></h1>
+      <p>Warm wishes for a bright, creative & successful year ahead ✨</p>
+    </header>
+
+    <section class="card">
+      <h2>New Beginnings, New Possibilities</h2>
+      <p>
+        As we step into <strong>2026</strong>, we celebrate innovation, growth, and the power of creativity.
+        May this year bring new opportunities, strong collaborations, and success in every dream you pursue.
+      </p>
+      <p>
+        May 2026 fill your days with <strong>health, happiness, confidence, and creativity</strong>.
+        May your hard work turn into achievements and your ideas shape the future.
+      </p>
+      <p>
+        Let this year be a chapter of learning, building, exploring new technologies,
+        and creating something meaningful for the world 🌍.
+      </p>
+      <p class="team">
+        — With heartfelt wishes from <br>
+        <strong>Ansh Kumar Rai</strong> & the entire <strong>CodeVerse Team</strong>
+      </p>
+    </section>
+
+    <footer>
+      © 2026 CodeVerse • Designed with care & creativity
+    </footer>
+  </div>
+
+  <script>
+    const glow = document.querySelector('.cursor-glow');
+    document.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('click', (e) => {
+      const ripple = document.createElement('div');
+      ripple.style.position = 'fixed';
+      ripple.style.left = e.clientX + 'px';
+      ripple.style.top = e.clientY + 'px';
+      ripple.style.width = ripple.style.height = '20px';
+      ripple.style.border = '2px solid #ffd369';
+      ripple.style.borderRadius = '50%';
+      ripple.style.transform = 'translate(-50%, -50%)';
+      ripple.style.animation = 'ripple 0.6s ease-out';
+      ripple.style.pointerEvents = 'none';
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  </script>
+
+  <style>
+    @keyframes ripple {
+      from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      to { opacity: 0; transform: translate(-50%, -50%) scale(4); }
+    }
+  </style>
+</body>
+</html>
